@@ -11,7 +11,7 @@ import math
 from decimal import Decimal
 import sys
 
-# Увеличиваем глубину рекурсии
+# Увеличивает глубину рекурсии
 sys.setrecursionlimit(10000)
 
 #Вычисление факториалов
