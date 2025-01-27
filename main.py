@@ -48,13 +48,13 @@ def compare_functions(n):
         
         start_time = time.perf_counter()
         recursive_result = f_recursive(i)
-        recursive_lru_time = (time.perf_counter() - start_time) * 1000
+        recursive_time = (time.perf_counter() - start_time) * 1000
         
         start_time = time.perf_counter()
         iterative_result = f_iterative(i)
         iterative_time = (time.perf_counter() - start_time) * 1000
 
-        print(f"{i:<5} {recursive_lru_time:<25.5f} {iterative_time:<25.5f} {recursive_result:<20.10f}")
+        print(f"{i:<5} {recursive_time:<25.5f} {iterative_time:<25.5f} {recursive_result:<20.10f}")
 
 
 if __name__ == "__main__":
