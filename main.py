@@ -16,14 +16,14 @@ def factorial_cache(n):
   return factorial(n)
 
 
-def f_recursive_lru(n):
+def f_recursive(n):
     if n == 1:
         return 1
     
-    return (-1) ** n * (f_recursive_lru(n - 1) + factorial_cache(n-2) / factorial_cache(2*n))
+    return (-1) ** n * (f_recursive(n - 1) + factorial_cache(n-2) / factorial_cache(2*n))
 
 
-def f_iterative_cached(n):
+def f_iterative(n):
     if n == 1:
         return 1
     
@@ -47,11 +47,11 @@ def compare_functions(n):
     for i in range(1, n + 1):
         
         start_time = time.perf_counter()
-        recursive_result = f_recursive_lru(i)
+        recursive_result = f_recursive(i)
         recursive_lru_time = (time.perf_counter() - start_time) * 1000
         
         start_time = time.perf_counter()
-        iterative_result = f_iterative_cached(i)
+        iterative_result = f_iterative(i)
         iterative_time = (time.perf_counter() - start_time) * 1000
 
         print(f"{i:<5} {recursive_lru_time:<25.5f} {iterative_time:<25.5f} {recursive_result:<20.10f}")
